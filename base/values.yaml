@@ -1,6 +1,4 @@
 dex:
-  image:
-    tag: v2.23.0
   env:
     - name: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
       valueFrom:

@@ -848,7 +848,7 @@ metadata:
     app.kubernetes.io/component: dex-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.23.0"
+    app.kubernetes.io/version: "v2.30.0"
 spec:
   selector:
     matchLabels:
@@ -863,7 +863,7 @@ spec:
         app.kubernetes.io/component: dex-server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.23.0"
+        app.kubernetes.io/version: "v2.30.0"
     spec:
       initContainers:
       - name: copyutil
@@ -881,7 +881,7 @@ spec:
           name: static-files
       containers:
       - name: dex-server
-        image: ghcr.io/dexidp/dex:v2.23.0
+        image: ghcr.io/dexidp/dex:v2.30.0
         imagePullPolicy: IfNotPresent
         command:
         - /shared/argocd-dex

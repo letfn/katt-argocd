@@ -639,7 +639,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: v2.23.0
+    app.kubernetes.io/version: v2.30.0
     helm.sh/chart: argo-cd-3.21.0
   name: argowf-argocd-dex-server
   namespace: argocd
@@ -656,7 +656,7 @@ spec:
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: argocd-dex-server
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: v2.23.0
+        app.kubernetes.io/version: v2.30.0
         helm.sh/chart: argo-cd-3.21.0
     spec:
       containers:
@@ -669,7 +669,7 @@ spec:
             secretKeyRef:
               key: client-secret
               name: argo-workflows-sso
-        image: ghcr.io/dexidp/dex:v2.23.0
+        image: ghcr.io/dexidp/dex:v2.30.0
         imagePullPolicy: IfNotPresent
         name: dex-server
         ports:
