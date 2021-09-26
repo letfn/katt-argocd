@@ -656,12 +656,6 @@ spec:
       - command:
         - /shared/argocd-dex
         - rundex
-        env:
-        - name: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
-          valueFrom:
-            secretKeyRef:
-              key: client-secret
-              name: argo-workflows-sso
         image: ghcr.io/dexidp/dex:v2.30.0
         imagePullPolicy: IfNotPresent
         name: dex-server

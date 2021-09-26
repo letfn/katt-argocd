@@ -879,12 +879,6 @@ spec:
         command:
         - /shared/argocd-dex
         - rundex
-        env:
-        - name: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
-          valueFrom:
-            secretKeyRef:
-              key: client-secret
-              name: argo-workflows-sso
         ports:
         - name: http
           containerPort: 5556
