@@ -69,13 +69,6 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
     application.instanceLabelKey: argocd.argoproj.io/instance
-    dex.config: |
-      staticClients:
-      - id: argo-workflows-sso
-        name: Argo Workflow
-        redirectURIs:
-          - https://argo.defn.ooo/oauth2/callback
-        secretEnv: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
     url: https://argocd.example.com
 ---
 # Source: argo-cd/templates/argocd-configs/argocd-gpg-keys-cm.yaml
@@ -886,12 +879,6 @@ spec:
         command:
         - /shared/argocd-dex
         - rundex
-        env:
-        - name: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
-          valueFrom:
-            secretKeyRef:
-              key: client-secret
-              name: argo-workflows-sso
         ports:
         - name: http
           containerPort: 5556
