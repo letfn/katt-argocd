@@ -1,0 +1,18 @@
+dex:
+  image:
+    tag: v2.23.0
+  env:
+    - name: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: argo-workflows-sso
+          key: client-secret
+server:
+  config:
+    dex.config: |
+      staticClients:
+      - id: argo-workflows-sso
+        name: Argo Workflow
+        redirectURIs:
+          - https://argo.defn.ooo/oauth2/callback
+        secretEnv: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
