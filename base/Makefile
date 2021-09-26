@@ -6,7 +6,7 @@ argocd.yaml: clean/argocd.yaml
 clean/argocd.yaml:
 	-helm repo add argo https://argoproj.github.io/argo-helm
 	helm repo update
-	helm template argocd argo/argo-cd --version 3.21.0 --namespace=argocd --values=values.yaml --kube-version 1.21 >$@
+	helm template argocd argo/argo-cd --version 3.21.0 --namespace=argocd --values=values.yaml --include-crds --kube-version 1.21 >$@
 
 .PHONY: clean
 clean:
