@@ -3370,6 +3370,9 @@ spec:
       containers:
       - command:
         - argocd-server
+        - --staticassets
+        - /shared/app
+        - --insecure
         env:
         - name: ARGOCD_SERVER_INSECURE
           valueFrom:

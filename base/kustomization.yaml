@@ -2,10 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - argocd.yaml
+  - ./upstream
 
 patches:
-- path: patch-insecure.yaml
+- path: patch-deployment-argocd-server-insecure.yaml
   target:
     kind: Deployment
     name: argocd-server

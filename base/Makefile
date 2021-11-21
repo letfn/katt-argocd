@@ -1,11 +1,11 @@
-build: clean argocd.yaml
+build: clean ../main.yaml
 
-argocd.yaml: clean/argocd.yaml
-	kustomize build clean >$@
+../main.yaml:
+	kustomize build >$@
 
-clean/argocd.yaml:
+clean/main.yaml:
 	curl -sSL https://raw.githubusercontent.com/argoproj/argo-cd/v2.1.6/manifests/install.yaml >$@
 
 .PHONY: clean
 clean:
-	rm -f clean/argocd.yaml
+	rm -f clean/main.yaml ../main.yaml
