@@ -6,9 +6,9 @@ import (
 )
 
 command: vendor: exec.Run & {
-	cmd: "hof mod vendor cue"
+	cmd: "hof mod vendor"
 }
 
 command: gen: boot.#Command & {
-	r: repo
+	"repo": repo
 }
